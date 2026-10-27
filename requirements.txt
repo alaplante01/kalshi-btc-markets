@@ -1,0 +1,4 @@
+# Runtime dependencies. Everything else is the Python standard library.
+# Pinned to the versions the Sep-Oct 2026 collector run used.
+cryptography==50.0.1   # RSA-PSS / Ed25519 request signing (kalshi_client.py)
+websockets==17.1       # authenticated market-data WebSockets (collector.py)

@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.14"]
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: python -m pip install -r requirements.txt pytest
+
+      # Everything here runs offline; the collector and trade CLI need Kalshi
+      # credentials (KALSHI_KEY_ID / KALSHI_PEM) and are not exercised in CI.
+      - name: Test
+        run: python -m pytest -q

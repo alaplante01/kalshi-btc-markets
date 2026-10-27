@@ -1,0 +1,49 @@
+# Captured market data and databases. Kalshi's Developer Agreement does not
+# allow sharing exchange data, so none of it belongs in the repo.
+data/
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite3
+*.parquet
+*.csv
+
+# Logs, including the terminal's signals.log
+*.log
+
+# Credentials and per-account exchange state
+*.pem
+*.key
+key-id.txt
+order-group.json
+.env
+.env.*
+
+# Model artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.joblib
+
+# Python
+.venv/
+venv/
+.tmp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/
